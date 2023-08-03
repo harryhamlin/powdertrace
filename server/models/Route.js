@@ -37,6 +37,6 @@ const routeSchema = new Schema(
     }
 );
 
-const RouteInventory = mongoose.model("RouteInventory", routeSchema);
+const Route = mongoose.model("Route", routeSchema);
 
-module.exports = RouteInventory;
+module.exports = Route;

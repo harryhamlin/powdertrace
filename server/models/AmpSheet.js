@@ -1,39 +1,32 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const AmpSheetSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
+const ampSheetSchema = new Schema(
+    {
+        materialInventory: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "MaterialInventory"
+            },
+        ],
+        routes: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Route"
+            },
+        ],
+        used: {
+            type: Number
+        },
+        returned: {
+            type: Number
+        }
     },
-    explosivesType: {
-        type: String
-    },
-    shotsUsed: {
-        type: Number
-    },
-    trigger: {
-        type: String
-    },
-    avalancheType: {
-        type: String
-    },
-    depth: {
-        type: Number
-    },
-    size: {
-        type: Number
-    },
-    destructivePotential: {
-        type: Number
+    {
+        timestamps: true,
     }
-  },
-  {
-    timestamps: true,
-  }
 );
 
-const PathInventory = mongoose.model("PathInventory", pathSchema);
+const AmpSheet = mongoose.model("AmpSheet", ampSheetSchema);
 
-module.exports = PathInventory;
+module.exports = AmpSheet;
