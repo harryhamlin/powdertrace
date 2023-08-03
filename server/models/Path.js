@@ -34,6 +34,6 @@ const pathSchema = new Schema(
   }
 );
 
-const PathInventory = mongoose.model("MaterialInventory", pathSchema);
+const PathInventory = mongoose.model("PathInventory", pathSchema);
 
 module.exports = PathInventory;
