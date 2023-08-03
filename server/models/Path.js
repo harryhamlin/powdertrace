@@ -34,6 +34,6 @@ const pathSchema = new Schema(
   }
 );
 
-const PathInventory = mongoose.model("PathInventory", pathSchema);
+const Path = mongoose.model("Path", pathSchema);
 
-module.exports = PathInventory;
+module.exports = Path;
